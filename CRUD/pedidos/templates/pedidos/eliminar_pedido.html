@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Título de la página -->
+    <title>Eliminar Pedido</title>
+    <!-- Estilos simples embebidos: definen fuente, layout centrado y estilos de botones -->
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        h1 { color: #333; text-align: center; }
+        .container { max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
+        p { margin: 20px 0; }
+        button { background-color: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; }
+        button:hover { background-color: #c82333; }
+        a { color: #007bff; text-decoration: none; padding: 10px 20px; border: 1px solid #007bff; border-radius: 4px; }
+        a:hover { background-color: #007bff; color: white; }
+    </style>
+</head>
+<body>
+    <!-- Encabezado principal de la página -->
+    <h1>Eliminar Pedido</h1>
+    <!-- Contenedor centrado que agrupa el contenido -->
+    <div class="container">
+        <!-- Mensaje de confirmación: muestra datos del pedido usando variables del contexto Django -->
+        <p>¿Estás seguro de que deseas eliminar el pedido de <strong>{{ pedido.cliente }} - {{ pedido.producto }}</strong>?</p>
+        <!-- Formulario que envía la confirmación de borrado. Se usa POST para acciones que modifican datos -->
+        <form method="post">
+            <!-- Token CSRF requerido por Django para proteger contra CSRF en solicitudes POST -->
+            {% csrf_token %}
+            <!-- Botón de envío: al pulsarlo el view que maneja esta plantilla debe realizar la eliminación -->
+            <button type="submit">Sí, Eliminar</button>
+            <!-- Enlace para cancelar la acción: redirige a la vista que lista los pedidos -->
+            <a href="{% url 'listar_pedidos' %}">No, Volver</a>
+        </form>
+    </div>
+</body>
+</html>
