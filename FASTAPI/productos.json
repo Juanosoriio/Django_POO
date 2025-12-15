@@ -1,0 +1,26 @@
+{
+  "1": {
+    "nombre": "Laptop Lenovo",
+    "costo": 1200.0,
+    "categoria": "Tecnología",
+    "stock": 10,
+    "peso": 1.5,
+    "precio_venta": 1500.0
+  },
+  "2": {
+    "nombre": "Camara XML",
+    "costo": 10.0,
+    "categoria": "Alta",
+    "stock": 1,
+    "peso": 0.5,
+    "precio_venta": 15.0
+  },
+  "3": {
+    "nombre": "Camara LG",
+    "costo": 10.0,
+    "categoria": "Alta",
+    "stock": 1,
+    "peso": 400.0,
+    "precio_venta": 12.0
+  }
+}
