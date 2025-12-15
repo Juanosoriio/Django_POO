@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle del Pedido</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        h1 { color: #333; text-align: center; }
+        .container { max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        p { margin: 10px 0; }
+        strong { font-weight: bold; }
+        .back-btn { background-color: #6c757d; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block; }
+        .back-btn:hover { background-color: #5a6268; text-decoration: none; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Detalle del Pedido</h1>
+    <div class="container">
+        <p><strong>ID:</strong> {{ pedido.id }}</p>
+        <p><strong>Cliente:</strong> {{ pedido.cliente }}</p>
+        <p><strong>Fecha Pedido:</strong> {{ pedido.fecha_pedido }}</p>
+        <p><strong>Producto:</strong> {{ pedido.producto }}</p>
+        <p><strong>Cantidad:</strong> {{ pedido.cantidad }}</p>
+        <p><strong>Estado:</strong> {{ pedido.get_estado_display }}</p>
+        <p><a href="{% url 'listar_pedidos' %}" class="back-btn"><i class="fas fa-arrow-left"></i> Volver a la lista de pedidos</a></p>
+    </div>
+</body>
+</html>
